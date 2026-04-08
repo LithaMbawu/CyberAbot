@@ -1,28 +1,36 @@
 ﻿using System;
-using System.Media; // Needed for SoundPlayer
+using System.Media;
 
-namespace CybersecurityBot
+namespace AudioPlayer
 {
     class Program
     {
         static void Main(string[] args)
         {
-            PlayGreeting();
+            Console.WriteLine("Audio Player is ready. Type 'play' to play greeting or 'exit' to quit.");
 
-            // Your chatbot logic here
-            Console.WriteLine("Chatbot is ready. How can I help you today?");
-            // Example: Wait for user input
-            string userInput = Console.ReadLine();
-            Console.WriteLine("You said: " + userInput);
+            string input;
+            while ((input = Console.ReadLine()?.ToLower()) != "exit")
+            {
+                if (input == "play")
+                {
+                    PlayGreeting();
+                }
+                else
+                {
+                    Console.WriteLine("Unknown command. Use 'play' or 'exit'.");
+                }
+            }
         }
 
         static void PlayGreeting()
         {
             try
             {
-                SoundPlayer player = new SoundPlayer("greeting.wav"); // Make sure file path is correct
-                player.Load(); // Optional: load synchronously before playing
-                player.PlaySync(); // PlaySync ensures greeting finishes before continuing
+                SoundPlayer player = new SoundPlayer("greeting.wav");
+                player.Load();
+                player.PlaySync();
+                Console.WriteLine("Greeting finished playing.");
             }
             catch (Exception ex)
             {
