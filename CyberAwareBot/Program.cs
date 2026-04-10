@@ -6,26 +6,28 @@ namespace CyberAwareBot
     {
         static void Main(string[] args)
         {
+            Console.Title = "Cybersecurity Awareness Bot";
+
+            AudioPlayer audioPlayer = new AudioPlayer();
+            audioPlayer.PlayGreeting();
+
             UIHelper ui = new UIHelper();
+            Console.WriteLine();
             ui.ShowBanner();
-            Console.WriteLine("Welcome to the CyberAware Bot!");
+
+            string userName = PromptForUserName();
+            ui.ShowWelcome(userName);
+
             bool running = true;
+            Chatbot chatbot = new Chatbot(userName);
 
             while (running)
             {
-                // Display menu
-                Console.WriteLine("\nPlease select a topic:");
-                Console.WriteLine("1. Password Safety");
-                Console.WriteLine("2. Phishing");
-                Console.WriteLine("3. Safe Browsing");
-                Console.WriteLine("4. Chat with Bot");
-                Console.WriteLine("5. Play Greeting");
-                Console.WriteLine("6. Exit");
-
+                ShowMenu();
                 Console.Write("Enter your choice (1-6): ");
-                string choice = Console.ReadLine();
+                string choice = (Console.ReadLine() ?? string.Empty).Trim();
 
-                switch (choice.Trim())
+                switch (choice)
                 {
                     case "1":
                         RunTopic("Password Safety", GetPasswordQuestions());
@@ -37,44 +39,83 @@ namespace CyberAwareBot
                         RunTopic("Safe Browsing", GetBrowsingQuestions());
                         break;
                     case "4":
-                        Console.Write("Enter your name for the chat: ");
-                        string name = Console.ReadLine();
-                        Chatbot chatbot = new Chatbot(name);
                         chatbot.RunChat();
                         break;
                     case "5":
-                        AudioPlayer audioPlayer = new AudioPlayer();
                         audioPlayer.PlayGreeting();
                         break;
                     case "6":
-                        Console.WriteLine("Goodbye! Stay safe online.");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("\nGoodbye, {0}! Stay safe online.", userName);
+                        Console.ResetColor();
                         running = false;
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Invalid choice. Please select 1-6.");
+                        Console.ResetColor();
                         break;
                 }
             }
         }
 
+        static string PromptForUserName()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("Please enter your name: ");
+            string name = Console.ReadLine()?.Trim();
+            Console.ResetColor();
+
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                name = "Guest";
+            }
+
+            return name;
+        }
+
+        static void ShowMenu()
+        {
+            Console.WriteLine("\n────────────────────────────────────────────────");
+            Console.WriteLine("|           Cybersecurity Awareness Menu         |");
+            Console.WriteLine("────────────────────────────────────────────────");
+            Console.WriteLine("1. Password Safety");
+            Console.WriteLine("2. Phishing");
+            Console.WriteLine("3. Safe Browsing");
+            Console.WriteLine("4. Chat with Bot");
+            Console.WriteLine("5. Play Greeting");
+            Console.WriteLine("6. Exit");
+        }
+
         static void RunTopic(string topic, string[] questions)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"\n--- {topic} Questions ---");
+            Console.ResetColor();
 
             for (int i = 0; i < questions.Length; i++)
             {
-                // Number each question
                 Console.WriteLine($"\n{i + 1}. {questions[i]}");
                 Console.Write("Your answer: ");
                 string userAnswer = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(userAnswer))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Bot: I didn't quite understand that. Could you rephrase?");
+                    Console.ResetColor();
+                }
                 else
-                    Console.WriteLine("Bot: Thanks for your answer!");
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Bot: That is a thoughtful answer. Keep going!");
+                    Console.ResetColor();
+                }
             }
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"\nYou have completed the {topic} questions!");
+            Console.ResetColor();
         }
 
         static string[] GetPasswordQuestions()

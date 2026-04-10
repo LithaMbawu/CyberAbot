@@ -10,17 +10,11 @@ namespace CyberAwareBot
         {
             try
             {
-                // Get Downloads folder
-                string downloadsPath = Path.Combine(
-                    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
-                    "Downloads",
-                    "CyberAwareBot",
-                    "greeting.wav"
-                );
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "greeting.wav");
 
-                if (!File.Exists(downloadsPath))
+                if (!File.Exists(filePath))
                 {
-                    Console.WriteLine("File not found: " + downloadsPath);
+                    Console.WriteLine("File not found: " + filePath);
                     return;
                 }
 
@@ -28,8 +22,10 @@ namespace CyberAwareBot
 
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = downloadsPath,
-                    UseShellExecute = true
+                    FileName = "afplay",
+                    Arguments = $"\"{filePath}\"",
+                    UseShellExecute = false,
+                    CreateNoWindow = true
                 });
             }
             catch (Exception ex)
