@@ -10,19 +10,27 @@ namespace CyberAwareBot
         {
             try
             {
-                // Path to the greeting.wav in the project directory
-                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "greeting.wav");
+                // Get Downloads folder
+                string downloadsPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                    "Downloads",
+                    "CyberAwareBot",
+                    "greeting.wav"
+                );
 
-                if (!File.Exists(filePath))
+                if (!File.Exists(downloadsPath))
                 {
-                    Console.WriteLine("File not found: " + filePath);
+                    Console.WriteLine("File not found: " + downloadsPath);
                     return;
                 }
 
                 Console.WriteLine("Playing greeting...");
 
-                // Mac audio playback
-                Process.Start("afplay", $"\"{filePath}\"");
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = downloadsPath,
+                    UseShellExecute = true
+                });
             }
             catch (Exception ex)
             {

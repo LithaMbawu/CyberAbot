@@ -19,9 +19,10 @@ namespace CyberAwareBot
                 Console.WriteLine("2. Phishing");
                 Console.WriteLine("3. Safe Browsing");
                 Console.WriteLine("4. Chat with Bot");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Play Greeting");
+                Console.WriteLine("6. Exit");
 
-                Console.Write("Enter your choice (1-5): ");
+                Console.Write("Enter your choice (1-6): ");
                 string choice = Console.ReadLine();
 
                 switch (choice.Trim())
@@ -42,11 +43,15 @@ namespace CyberAwareBot
                         chatbot.RunChat();
                         break;
                     case "5":
+                        AudioPlayer audioPlayer = new AudioPlayer();
+                        audioPlayer.PlayGreeting();
+                        break;
+                    case "6":
                         Console.WriteLine("Goodbye! Stay safe online.");
                         running = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid choice. Please select 1-5.");
+                        Console.WriteLine("Invalid choice. Please select 1-6.");
                         break;
                 }
             }

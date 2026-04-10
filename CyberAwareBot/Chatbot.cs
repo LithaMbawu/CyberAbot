@@ -56,7 +56,7 @@ namespace CyberAwareBot
                 {
                     Respond("Always use secure websites (HTTPS), avoid suspicious downloads, and keep your browser updated.", ConsoleColor.Cyan);
                 }
-                else if (input.Contains("play"))
+                else if (input == "play" || input == "play greeting" || input == "play greeting.wav")
                 {
                     audioPlayer.PlayGreeting();
                 }
