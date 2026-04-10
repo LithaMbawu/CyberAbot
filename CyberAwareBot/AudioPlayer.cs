@@ -1,36 +1,28 @@
 ﻿using System;
-using System.Media;
+using System.Diagnostics;
+using System.IO;
 
-namespace AudioPlayer
+namespace CyberAwareBot
 {
-    class Program
+    public class AudioPlayer
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Audio Player is ready. Type 'play' to play greeting or 'exit' to quit.");
-
-            string input;
-            while ((input = Console.ReadLine()?.ToLower()) != "exit")
-            {
-                if (input == "play")
-                {
-                    PlayGreeting();
-                }
-                else
-                {
-                    Console.WriteLine("Unknown command. Use 'play' or 'exit'.");
-                }
-            }
-        }
-
-        static void PlayGreeting()
+        public void PlayGreeting()
         {
             try
             {
-                SoundPlayer player = new SoundPlayer("greeting.wav");
-                player.Load();
-                player.PlaySync();
-                Console.WriteLine("Greeting finished playing.");
+                // Path to the greeting.wav in the project directory
+                string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "greeting.wav");
+
+                if (!File.Exists(filePath))
+                {
+                    Console.WriteLine("File not found: " + filePath);
+                    return;
+                }
+
+                Console.WriteLine("Playing greeting...");
+
+                // Mac audio playback
+                Process.Start("afplay", $"\"{filePath}\"");
             }
             catch (Exception ex)
             {
@@ -39,5 +31,4 @@ namespace AudioPlayer
         }
     }
 }
-
 

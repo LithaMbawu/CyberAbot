@@ -1,332 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
-      "Microsoft.Build.Tasks.Git/10.0.201": {
-        "type": "package",
-        "dependencies": {
-          "System.IO.Hashing": "10.0.5"
-        },
-        "build": {
-          "buildTransitive/Microsoft.Build.Tasks.Git.props": {},
-          "buildTransitive/Microsoft.Build.Tasks.Git.targets": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.Build.Tasks.Git.props": {},
-          "buildMultiTargeting/Microsoft.Build.Tasks.Git.targets": {}
-        }
-      },
-      "Microsoft.SourceLink.Common/10.0.201": {
-        "type": "package",
-        "build": {
-          "buildTransitive/Microsoft.SourceLink.Common.props": {},
-          "buildTransitive/Microsoft.SourceLink.Common.targets": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.SourceLink.Common.props": {},
-          "buildMultiTargeting/Microsoft.SourceLink.Common.targets": {}
-        }
-      },
-      "Microsoft.SourceLink.GitHub/10.0.201": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Build.Tasks.Git": "10.0.201",
-          "Microsoft.SourceLink.Common": "10.0.201",
-          "System.IO.Hashing": "10.0.5"
-        },
-        "build": {
-          "build/Microsoft.SourceLink.GitHub.props": {},
-          "build/Microsoft.SourceLink.GitHub.targets": {}
-        },
-        "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.SourceLink.GitHub.props": {},
-          "buildMultiTargeting/Microsoft.SourceLink.GitHub.targets": {}
-        }
-      },
-      "System.Buffers/4.6.1": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
-      },
-      "System.IO.Hashing/10.0.5": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.6.1",
-          "System.Memory": "4.6.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.IO.Hashing.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/netcoreapp2.0/System.IO.Hashing.targets": {}
-        }
-      },
-      "System.Memory/4.6.3": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      }
-    }
+    "net7.0": {}
   },
-  "libraries": {
-    "Microsoft.Build.Tasks.Git/10.0.201": {
-      "sha512": "DMYBnrFZvLnBKn14VavEuuIr31CY6YY2i2L9P8DorS/Qp6ifRR8ZPLdJCFLFfjikNq8DykbYyLd/RP6lSqHcWw==",
-      "type": "package",
-      "path": "microsoft.build.tasks.git/10.0.201",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.txt",
-        "build/Microsoft.Build.Tasks.Git.props",
-        "build/Microsoft.Build.Tasks.Git.targets",
-        "buildMultiTargeting/Microsoft.Build.Tasks.Git.props",
-        "buildMultiTargeting/Microsoft.Build.Tasks.Git.targets",
-        "buildTransitive/Microsoft.Build.Tasks.Git.props",
-        "buildTransitive/Microsoft.Build.Tasks.Git.targets",
-        "microsoft.build.tasks.git.10.0.201.nupkg.sha512",
-        "microsoft.build.tasks.git.nuspec",
-        "tools/net/Microsoft.Build.Tasks.Git.deps.json",
-        "tools/net/Microsoft.Build.Tasks.Git.dll",
-        "tools/net/Microsoft.Build.Tasks.Git.pdb",
-        "tools/net/System.IO.Hashing.dll",
-        "tools/net/cs/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/de/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/es/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/fr/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/it/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/ja/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/ko/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/pl/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/pt-BR/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/ru/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/tr/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/zh-Hans/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/net/zh-Hant/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/Microsoft.Build.Tasks.Git.dll",
-        "tools/netframework/Microsoft.Build.Tasks.Git.dll.config",
-        "tools/netframework/Microsoft.Build.Tasks.Git.pdb",
-        "tools/netframework/System.Buffers.dll",
-        "tools/netframework/System.IO.Hashing.dll",
-        "tools/netframework/System.Memory.dll",
-        "tools/netframework/System.Numerics.Vectors.dll",
-        "tools/netframework/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/netframework/cs/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/de/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/es/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/fr/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/it/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/ja/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/ko/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/pl/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/pt-BR/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/ru/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/tr/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/zh-Hans/Microsoft.Build.Tasks.Git.resources.dll",
-        "tools/netframework/zh-Hant/Microsoft.Build.Tasks.Git.resources.dll"
-      ]
-    },
-    "Microsoft.SourceLink.Common/10.0.201": {
-      "sha512": "QbBYhkjgL6rCnBfDbzsAJLlsad13TlBHqYCFDIw56OO2g6ix+9RsmY8uxiQGdWwFKbZXaXyAA6jDCzFYVGCZDw==",
-      "type": "package",
-      "path": "microsoft.sourcelink.common/10.0.201",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.txt",
-        "build/InitializeSourceControlInformation.targets",
-        "build/Microsoft.SourceLink.Common.props",
-        "build/Microsoft.SourceLink.Common.targets",
-        "buildMultiTargeting/Microsoft.SourceLink.Common.props",
-        "buildMultiTargeting/Microsoft.SourceLink.Common.targets",
-        "buildTransitive/Microsoft.SourceLink.Common.props",
-        "buildTransitive/Microsoft.SourceLink.Common.targets",
-        "microsoft.sourcelink.common.10.0.201.nupkg.sha512",
-        "microsoft.sourcelink.common.nuspec",
-        "tools/net/Microsoft.SourceLink.Common.deps.json",
-        "tools/net/Microsoft.SourceLink.Common.dll",
-        "tools/net/Microsoft.SourceLink.Common.pdb",
-        "tools/net/cs/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/de/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/es/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/fr/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/it/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/ja/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/ko/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/pl/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/pt-BR/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/ru/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/tr/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/zh-Hans/Microsoft.SourceLink.Common.resources.dll",
-        "tools/net/zh-Hant/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/Microsoft.SourceLink.Common.dll",
-        "tools/netframework/Microsoft.SourceLink.Common.dll.config",
-        "tools/netframework/Microsoft.SourceLink.Common.pdb",
-        "tools/netframework/cs/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/de/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/es/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/fr/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/it/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/ja/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/ko/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/pl/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/pt-BR/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/ru/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/tr/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/zh-Hans/Microsoft.SourceLink.Common.resources.dll",
-        "tools/netframework/zh-Hant/Microsoft.SourceLink.Common.resources.dll"
-      ]
-    },
-    "Microsoft.SourceLink.GitHub/10.0.201": {
-      "sha512": "qxYAmO4ktzd9L+HMdnqWucxpu7bI9undPyACXOMqPyhaiMtbpbYL/n0ACyWIJlbyEJrXFwxiOaBOSasLtDvsCg==",
-      "type": "package",
-      "path": "microsoft.sourcelink.github/10.0.201",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.txt",
-        "build/Microsoft.SourceLink.GitHub.props",
-        "build/Microsoft.SourceLink.GitHub.targets",
-        "buildMultiTargeting/Microsoft.SourceLink.GitHub.props",
-        "buildMultiTargeting/Microsoft.SourceLink.GitHub.targets",
-        "microsoft.sourcelink.github.10.0.201.nupkg.sha512",
-        "microsoft.sourcelink.github.nuspec",
-        "tools/net/Microsoft.SourceLink.GitHub.deps.json",
-        "tools/net/Microsoft.SourceLink.GitHub.dll",
-        "tools/net/Microsoft.SourceLink.GitHub.pdb",
-        "tools/net/System.IO.Hashing.dll",
-        "tools/net/cs/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/de/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/es/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/fr/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/it/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/ja/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/ko/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/pl/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/pt-BR/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/ru/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/tr/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/zh-Hans/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/net/zh-Hant/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/Microsoft.SourceLink.GitHub.dll",
-        "tools/netframework/Microsoft.SourceLink.GitHub.dll.config",
-        "tools/netframework/Microsoft.SourceLink.GitHub.pdb",
-        "tools/netframework/System.Buffers.dll",
-        "tools/netframework/System.IO.Hashing.dll",
-        "tools/netframework/System.Memory.dll",
-        "tools/netframework/System.Numerics.Vectors.dll",
-        "tools/netframework/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/netframework/cs/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/de/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/es/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/fr/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/it/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/ja/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/ko/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/pl/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/pt-BR/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/ru/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/tr/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/zh-Hans/Microsoft.SourceLink.GitHub.resources.dll",
-        "tools/netframework/zh-Hant/Microsoft.SourceLink.GitHub.resources.dll"
-      ]
-    },
-    "System.Buffers/4.6.1": {
-      "sha512": "N8GXpmiLMtljq7gwvyS+1QvKT/W2J8sNAvx+HVg4NGmsG/H+2k/y9QI23auLJRterrzCiDH+IWAw4V/GPwsMlw==",
-      "type": "package",
-      "path": "system.buffers/4.6.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "buildTransitive/net461/System.Buffers.targets",
-        "buildTransitive/net462/_._",
-        "lib/net462/System.Buffers.dll",
-        "lib/net462/System.Buffers.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard2.0/System.Buffers.dll",
-        "lib/netstandard2.0/System.Buffers.xml",
-        "lib/netstandard2.1/_._",
-        "system.buffers.4.6.1.nupkg.sha512",
-        "system.buffers.nuspec"
-      ]
-    },
-    "System.IO.Hashing/10.0.5": {
-      "sha512": "8IBJWcCT9+e4Bmevm4T7+fQEiAh133KGiz4oiVTgJckd3Q76OFdR1falgn9lpz7+C4HJvogCDJeAa2QmvbeVtg==",
-      "type": "package",
-      "path": "system.io.hashing/10.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.IO.Hashing.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
-        "buildTransitive/netcoreapp2.0/System.IO.Hashing.targets",
-        "lib/net10.0/System.IO.Hashing.dll",
-        "lib/net10.0/System.IO.Hashing.xml",
-        "lib/net462/System.IO.Hashing.dll",
-        "lib/net462/System.IO.Hashing.xml",
-        "lib/net8.0/System.IO.Hashing.dll",
-        "lib/net8.0/System.IO.Hashing.xml",
-        "lib/net9.0/System.IO.Hashing.dll",
-        "lib/net9.0/System.IO.Hashing.xml",
-        "lib/netstandard2.0/System.IO.Hashing.dll",
-        "lib/netstandard2.0/System.IO.Hashing.xml",
-        "system.io.hashing.10.0.5.nupkg.sha512",
-        "system.io.hashing.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.Memory/4.6.3": {
-      "sha512": "qdcDOgnFZY40+Q9876JUHnlHu7bosOHX8XISRoH94fwk6hgaeQGSgfZd8srWRZNt5bV9ZW2TljcegDNxsf+96A==",
-      "type": "package",
-      "path": "system.memory/4.6.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "buildTransitive/net461/System.Memory.targets",
-        "buildTransitive/net462/_._",
-        "lib/net462/System.Memory.dll",
-        "lib/net462/System.Memory.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "lib/netstandard2.1/_._",
-        "system.memory.4.6.3.nupkg.sha512",
-        "system.memory.nuspec"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net7.0": [
-      "Microsoft.SourceLink.GitHub >= 10.0.201"
-    ]
+    "net7.0": []
   },
   "packageFolders": {
     "/Users/lithambawu/.nuget/packages/": {}
@@ -360,19 +39,17 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
-        "dependencies": {
-          "Microsoft.SourceLink.GitHub": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[10.0.201, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -389,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/RuntimeIdentifierGraph.json"
       }
     }
   }

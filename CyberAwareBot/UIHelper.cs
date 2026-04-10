@@ -15,11 +15,6 @@ namespace CyberAwareBot
     ▀▀▀▀      ▀▀     ▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀  ▀▀    ▀▀▀  ▀▀▀▀▀    ▀▀▀▀▀▀▀▀     ▀▀▀▀     ▀▀▀▀    ▀▀    ▀▀▀  ▀▀▀▀▀▀      ▀▀        ▀▀
 ";
 
-        public UIHelper()
-        {
-        }
-
-        // Optional: method to display the banner
         public void ShowBanner()
         {
             Console.WriteLine(Banner);

@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GRCgT4OZ50oR1PNqrkq9AiQKOvFjqYjzxn4NSM0wBlr/Rw39DCKiuFVIvkeAPEGiAEWerB3R6/EKqK63XkXonw==",
+  "dgSpecHash": "DGn1L5mzo/8=",
   "success": true,
   "projectFilePath": "/Users/lithambawu/Projects/CyberAwareBot/CyberAwareBot/CyberAwareBot.csproj",
-  "expectedPackageFiles": [
-    "/Users/lithambawu/.nuget/packages/microsoft.build.tasks.git/10.0.201/microsoft.build.tasks.git.10.0.201.nupkg.sha512",
-    "/Users/lithambawu/.nuget/packages/microsoft.sourcelink.common/10.0.201/microsoft.sourcelink.common.10.0.201.nupkg.sha512",
-    "/Users/lithambawu/.nuget/packages/microsoft.sourcelink.github/10.0.201/microsoft.sourcelink.github.10.0.201.nupkg.sha512",
-    "/Users/lithambawu/.nuget/packages/system.buffers/4.6.1/system.buffers.4.6.1.nupkg.sha512",
-    "/Users/lithambawu/.nuget/packages/system.io.hashing/10.0.5/system.io.hashing.10.0.5.nupkg.sha512",
-    "/Users/lithambawu/.nuget/packages/system.memory/4.6.3/system.memory.4.6.3.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

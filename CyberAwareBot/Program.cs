@@ -1,12 +1,14 @@
 ﻿using System;
 
-namespace CybersecurityBot
+namespace CyberAwareBot
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Cybersecurity Bot!");
+            UIHelper ui = new UIHelper();
+            ui.ShowBanner();
+            Console.WriteLine("Welcome to the CyberAware Bot!");
             bool running = true;
 
             while (running)
@@ -16,9 +18,10 @@ namespace CybersecurityBot
                 Console.WriteLine("1. Password Safety");
                 Console.WriteLine("2. Phishing");
                 Console.WriteLine("3. Safe Browsing");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Chat with Bot");
+                Console.WriteLine("5. Exit");
 
-                Console.Write("Enter your choice (1-4): ");
+                Console.Write("Enter your choice (1-5): ");
                 string choice = Console.ReadLine();
 
                 switch (choice.Trim())
@@ -33,11 +36,17 @@ namespace CybersecurityBot
                         RunTopic("Safe Browsing", GetBrowsingQuestions());
                         break;
                     case "4":
+                        Console.Write("Enter your name for the chat: ");
+                        string name = Console.ReadLine();
+                        Chatbot chatbot = new Chatbot(name);
+                        chatbot.RunChat();
+                        break;
+                    case "5":
                         Console.WriteLine("Goodbye! Stay safe online.");
                         running = false;
                         break;
                     default:
-                        Console.WriteLine("Invalid choice. Please select 1-4.");
+                        Console.WriteLine("Invalid choice. Please select 1-5.");
                         break;
                 }
             }
