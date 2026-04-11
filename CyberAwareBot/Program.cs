@@ -30,13 +30,13 @@ namespace CyberAwareBot
                 switch (choice)
                 {
                     case "1":
-                        RunTopic("Password Safety", GetPasswordQuestions());
+                        RunTopic("Password Safety", GetPasswordQuestions(), GetPasswordAnswers());
                         break;
                     case "2":
-                        RunTopic("Phishing", GetPhishingQuestions());
+                        RunTopic("Phishing", GetPhishingQuestions(), GetPhishingAnswers());
                         break;
                     case "3":
-                        RunTopic("Safe Browsing", GetBrowsingQuestions());
+                        RunTopic("Safe Browsing", GetBrowsingQuestions(), GetBrowsingAnswers());
                         break;
                     case "4":
                         chatbot.RunChat();
@@ -87,7 +87,7 @@ namespace CyberAwareBot
             Console.WriteLine("6. Exit");
         }
 
-        static void RunTopic(string topic, string[] questions)
+        static void RunTopic(string topic, string[] questions, string[] answers)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"\n--- {topic} Questions ---");
@@ -98,6 +98,7 @@ namespace CyberAwareBot
                 Console.WriteLine($"\n{i + 1}. {questions[i]}");
                 Console.Write("Your answer: ");
                 string userAnswer = Console.ReadLine();
+                string correctAnswer = answers.Length > i ? answers[i] : "No answer available.";
 
                 if (string.IsNullOrWhiteSpace(userAnswer))
                 {
@@ -108,7 +109,8 @@ namespace CyberAwareBot
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Bot: That is a thoughtful answer. Keep going!");
+                    Console.WriteLine("Bot: Thanks for your answer.");
+                    Console.WriteLine($"Bot: The best answer is: {correctAnswer}");
                     Console.ResetColor();
                 }
             }
@@ -133,6 +135,21 @@ namespace CyberAwareBot
             };
         }
 
+        static string[] GetPasswordAnswers()
+        {
+            return new string[]
+            {
+                "A strong password helps protect your accounts from being hacked or guessed.",
+                "No, you should use unique passwords for each account.",
+                "A strong password is long, unique, and contains letters, numbers, and symbols.",
+                "Change passwords if a service is breached or if you suspect compromise, but generally use strong unique passwords instead of frequent changes.",
+                "A password manager stores strong passwords securely so you don't have to remember them all.",
+                "No, using personal info makes passwords easier to guess.",
+                "Two-factor authentication adds a second verification step after your password.",
+                "Use a password manager, avoid writing them down, and never share them with others."
+            };
+        }
+
         static string[] GetPhishingQuestions()
         {
             return new string[]
@@ -148,6 +165,21 @@ namespace CyberAwareBot
             };
         }
 
+        static string[] GetPhishingAnswers()
+        {
+            return new string[]
+            {
+                "Phishing is a scam where attackers try to trick you into giving personal information.",
+                "You can recognize phishing by checking the sender, looking for poor spelling, and avoiding unexpected links or attachments.",
+                "Unknown links may lead to malicious sites or downloads, so avoid clicking them unless you trust the source.",
+                "If you suspect phishing, do not click any links, report it, and delete the message.",
+                "No, it is not safe to reply to suspicious emails because that can confirm your address to attackers.",
+                "Spear phishing is a targeted phishing attack aimed at a specific person or organization.",
+                "Phishing scams can cost businesses money, damage reputation, and expose sensitive data.",
+                "Yes, phishing can happen over phone calls and is called vishing. Always verify the caller before sharing information."
+            };
+        }
+
         static string[] GetBrowsingQuestions()
         {
             return new string[]
@@ -160,6 +192,21 @@ namespace CyberAwareBot
                 "How can you check website credibility?",
                 "Why should you avoid unknown pop-ups?",
                 "What is browser sandboxing and why does it help?"
+            };
+        }
+
+        static string[] GetBrowsingAnswers()
+        {
+            return new string[]
+            {
+                "A secure website uses HTTPS and has a valid certificate to protect your data.",
+                "HTTPS encrypts data between your browser and the website so attackers cannot read it.",
+                "Public Wi-Fi can be insecure and allow attackers to intercept your traffic or steal your information.",
+                "Regular updates fix security flaws and help keep your browser safe from new threats.",
+                "Only download files from trusted sources and avoid unknown or suspicious downloads.",
+                "Check website credibility by confirming the URL, reading reviews, and verifying security indicators.",
+                "Unknown pop-ups can carry malware or phishing attempts, so avoid interacting with them.",
+                "Sandboxing isolates the browser from the rest of your system, reducing the impact of attacks."
             };
         }
     }
