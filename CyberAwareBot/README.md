@@ -2,7 +2,7 @@
 
 ## Overview
 
-CyberAwareBot is a console-based cybersecurity awareness chatbot built in C#. It combines a voice greeting, ASCII art header, personalized user interaction, and an engaging console UI to help users learn about password safety, phishing, and safe browsing.
+CyberAwareBot is a console based cybersecurity awareness chatbot built in C#. It combines a voice greeting, ASCII art header, personalized user interaction, and an engaging console UI to help users learn about password safety, phishing, and safe browsing.
 
 ## Features
 
@@ -22,19 +22,6 @@ CyberAwareBot is a console-based cybersecurity awareness chatbot built in C#. It
 - `Chatbot.cs` - interactive chatbot session with personalized responses
 - `AudioPlayer.cs` - voice greeting playback logic
 - `greeting.wav` - recorded welcome audio file
-- `CyberAwareBot.csproj` - project configuration and output settings
-
-## How to Run
-
-1. Open a terminal in the `CyberAwareBot` folder
-2. Build the project:
-   ```bash
-   dotnet build
-   ```
-3. Run the application:
-   ```bash
-   dotnet run
-   ```
 
 ## Usage
 
@@ -63,6 +50,16 @@ Potential enhancements include:
 - Additional cybersecurity topics and interactive lessons
 - Logging of session activity and user progress
 
-## Contact
+## Student Information
 
-This project is designed for cybersecurity awareness and education. If you want to extend it further, add new response patterns, or improve the interactive experience, the code is structured for easy enhancement.
+- Name: Litha Mbawu
+- Module: Programming 2
+- Student Number: ST10486617
+
+## Actions Taken
+
+- Added audio playback logic for `greeting.wav` and path handling for macOS
+- Implemented interactive quiz feedback so users receive the correct answer after each response
+- Fixed project configuration so the build no longer fails when the audio file is stored outside the project folder
+- Updated the app structure to support topic questions and answer lookups
+
