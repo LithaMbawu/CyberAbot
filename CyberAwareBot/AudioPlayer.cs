@@ -24,7 +24,7 @@ namespace CyberAwareBot
                     Path.Combine(basePath, fileName)
                 };
 
-                string filePath = searchPaths.FirstOrDefault(File.Exists);
+                string filePath = searchPaths.FirstOrDefault(File.Exists) ?? string.Empty;
 
                 if (string.IsNullOrEmpty(filePath))
                 {

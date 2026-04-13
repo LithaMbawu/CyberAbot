@@ -13,4 +13,4 @@
 /Users/lithambawu/Projects/CyberAwareBot/CyberAwareBot/obj/Debug/net7.0/CyberAwareBot.pdb
 /Users/lithambawu/Projects/CyberAwareBot/CyberAwareBot/obj/Debug/net7.0/CyberAwareBot.genruntimeconfig.cache
 /Users/lithambawu/Projects/CyberAwareBot/CyberAwareBot/obj/Debug/net7.0/ref/CyberAwareBot.dll
-/Users/lithambawu/Projects/CyberAwareBot/CyberAwareBot/obj/Debug/net7.0/CyberAwareBot.sourcelink.json
+/Users/lithambawu/Projects/CyberAwareBot/CyberAwareBot/obj/Debug/net7.0/CyberAwareBot.csproj.AssemblyReference.cache

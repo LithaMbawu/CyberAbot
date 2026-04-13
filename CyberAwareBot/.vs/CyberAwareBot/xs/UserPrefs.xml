@@ -3,9 +3,9 @@
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="UIHelper.cs">
     <Files>
-      <File FileName="AudioPlayer.cs" Line="3" Column="1" />
-      <File FileName="Chatbot.cs" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="AudioPlayer.cs" />
+      <File FileName="Chatbot.cs" />
+      <File FileName="Program.cs" />
       <File FileName="UIHelper.cs" Line="19" Column="1" />
     </Files>
     <Pads>
@@ -13,7 +13,7 @@
         <State name="__root__">
           <Node name="CyberAwareBot">
             <Node name="CyberAwareBot">
-              <Node name="README.md" selected="True" />
+              <Node name="UIHelper.cs" selected="True" />
             </Node>
           </Node>
         </State>
