@@ -63,3 +63,8 @@ Potential enhancements include:
 - Fixed project configuration so the build no longer fails when the audio file is stored outside the project folder
 - Updated the app structure to support topic questions and answer lookups
 
+  Piicture of successful Cl workflow run
+  ![IMG_7F368DA8-656E-4C60-9F86-ABFDA0EB6F9D](https://github.com/user-attachments/assets/779f2407-2ea3-46e9-a0c3-11759605654b)
+  
+
+
