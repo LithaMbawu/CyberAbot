@@ -28,7 +28,7 @@ namespace CyberAwareBot
 
             string input;
 
-            while ((input = Console.ReadLine()?.Trim().ToLower()) != "exit")
+            while ((input = (Console.ReadLine() ?? string.Empty).Trim().ToLower()) != "exit")
             {
                 if (string.IsNullOrWhiteSpace(input))
                 {

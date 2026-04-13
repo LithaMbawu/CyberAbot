@@ -12,9 +12,9 @@ namespace CyberAwareBot
             try
             {
                 string fileName = "greeting.wav";
-                string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                string basePath = AppDomain.CurrentDomain.BaseDirectory ?? string.Empty;
                 string projectRoot = Path.GetFullPath(Path.Combine(basePath, "..", "..", ".."));
-                string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) ?? string.Empty;
 
                 string[] searchPaths = new[]
                 {

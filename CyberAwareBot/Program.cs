@@ -9,11 +9,11 @@ namespace CyberAwareBot
             Console.Title = "Cybersecurity Awareness Bot";
 
             AudioPlayer audioPlayer = new AudioPlayer();
-            audioPlayer.PlayGreeting();
 
             UIHelper ui = new UIHelper();
             Console.WriteLine();
             ui.ShowBanner();
+            audioPlayer.PlayGreeting();
 
             string userName = PromptForUserName();
             ui.ShowWelcome(userName);
@@ -49,6 +49,7 @@ namespace CyberAwareBot
                         Console.WriteLine("\nGoodbye, {0}! Stay safe online.", userName);
                         Console.ResetColor();
                         running = false;
+                        Environment.Exit(0);
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -63,7 +64,7 @@ namespace CyberAwareBot
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("Please enter your name: ");
-            string name = Console.ReadLine()?.Trim();
+            string name = (Console.ReadLine() ?? string.Empty).Trim();
             Console.ResetColor();
 
             if (string.IsNullOrWhiteSpace(name))
@@ -97,7 +98,7 @@ namespace CyberAwareBot
             {
                 Console.WriteLine($"\n{i + 1}. {questions[i]}");
                 Console.Write("Your answer: ");
-                string userAnswer = Console.ReadLine();
+                string userAnswer = Console.ReadLine() ?? string.Empty;
                 string correctAnswer = answers.Length > i ? answers[i] : "No answer available.";
 
                 if (string.IsNullOrWhiteSpace(userAnswer))
